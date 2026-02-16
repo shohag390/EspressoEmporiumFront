@@ -1,9 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rancho&display=swap");
 @import "tailwindcss";
 
+body {
+  font-family: "Rancho", cursive;
+}
 .raleway {
   font-family: "Raleway", sans-serif;
 }
-.rancho {
-  font-family: "Rancho", cursive;
+
+.navbar {
+  background-image: url("./assets/images/nav.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
