@@ -1,12 +1,15 @@
-import React from "react";
 import "./App.css";
+import Footer from "./shared/Footer";
+import Navbar from "./shared/Navbar";
+import { Outlet } from "react-router";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="rancho">Espresso Emporium</h1>
-      <h1 className="raleway">Espresso Emporium</h1>
-    </div>
+    <>
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </>
   );
 };
 
