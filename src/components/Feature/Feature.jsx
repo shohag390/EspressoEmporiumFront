@@ -12,7 +12,7 @@ const Feature = ({ item }) => {
           alt=""
         />
       </div>
-      <h1 className="text-[#331A15] font-medium text-[22px] md:text-[24px] lg:text-[26px] 2xl:text-[28px] ">
+      <h1 className="text-[#331A15] font-medium text-[22px] md:text-[24px] lg:text-[26px] 2xl:text-[28px]">
         {item?.title}
       </h1>
       <p className="text-[#1B1A1A] raleway text-[14px] md:text-[16px] line-clamp-1 lg:line-clamp-2">

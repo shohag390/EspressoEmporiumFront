@@ -12,7 +12,7 @@ const navlinks = [
   },
   {
     id: 2,
-    name: "About",
+    name: "About Us",
     path: "/about",
   },
   {
@@ -31,7 +31,7 @@ const Navbar = () => {
   const [open, isOpen] = useState(false);
 
   return (
-    <nav className="h-[8vh] md:h-[9vh] lg:h-[10vh] 2xl:h-[11vh] px-6 md:px-12 lg:px-45 2xl:px-50 navbar flex items-center justify-between sticky top-0 left-0 z-50">
+    <nav className="h-[8vh] md:h-[9vh] lg:h-[10vh] 2xl:h-[11vh] px-6 md:px-12 lg:px-35 2xl:px-50 navbar flex items-center justify-between sticky top-0 left-0 z-50">
       {/* Logo  */}
       <Link className="flex items-center gap-1 md:gap-2 " to={"/"}>
         <img

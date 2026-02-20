@@ -36,7 +36,7 @@ const features = [
 
 const FeaturesItem = () => {
   return (
-    <div className="w-full px-6 md:px-12 lg:px-45 2xl:px-50 bg-[#ECEAE3] py-6 md:py-8 lg:py-10 2xl:py-14">
+    <div className="w-full px-6 md:px-12 lg:px-35 2xl:px-50 bg-[#ECEAE3] py-6 md:py-8 lg:py-10 2xl:py-14">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 lg:gap-7 2xl:gap-8">
         {features.map((item) => (
           <Feature key={item?.id} item={item} />

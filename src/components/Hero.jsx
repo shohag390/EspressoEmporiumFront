@@ -4,7 +4,7 @@ import { NavLink } from "react-router";
 
 const Hero = () => {
   return (
-    <div className="h-[30vh] md:h-[45vh] lg:h-[90vh] 2xl:h-[89vh] w-full px-6 md:px-12 lg:px-45 2xl:px-50 hero flex flex-col justify-center items-end">
+    <div className="h-[30vh] md:h-[45vh] lg:h-[90vh] 2xl:h-[89vh] w-full px-6 md:px-12 lg:px-35 2xl:px-50 hero flex flex-col justify-center items-end">
       <div className="lg:w-1/2">
         <h1 className="text-[#ffff] text-[24px] md:text-[32px] lg:text-[40px] 2xl:text-[48px] font-medium">
           Would you like a Cup of Delicious Coffee?
