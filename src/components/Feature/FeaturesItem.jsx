@@ -2,6 +2,7 @@ import image1 from "./../../assets/images/features1.png";
 import image2 from "../../assets/images/features2.png";
 import image3 from "../../assets/images/features3.png";
 import image4 from "../../assets/images/features4.png";
+import Feature from "./Feature";
 
 const features = [
   {
@@ -34,7 +35,15 @@ const features = [
 ];
 
 const FeaturesItem = () => {
-  return <div>FeaturesItem</div>;
+  return (
+    <div className="w-full px-6 md:px-12 lg:px-45 2xl:px-50 bg-[#ECEAE3] py-6 md:py-8 lg:py-10 2xl:py-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 lg:gap-7 2xl:gap-8">
+        {features.map((item) => (
+          <Feature key={item?.id} item={item} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default FeaturesItem;

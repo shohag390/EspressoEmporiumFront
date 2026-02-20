@@ -4,12 +4,12 @@ import { NavLink } from "react-router";
 
 const Hero = () => {
   return (
-    <div className="h-[30vh] md:h-[45vh] lg:h-[90vh] 2xl:h-[89vh] w-full px-5 md:px-12 lg:px-25 2xl:px-37 hero flex flex-col justify-center items-end">
+    <div className="h-[30vh] md:h-[45vh] lg:h-[90vh] 2xl:h-[89vh] w-full px-6 md:px-12 lg:px-45 2xl:px-50 hero flex flex-col justify-center items-end">
       <div className="lg:w-1/2">
         <h1 className="text-[#ffff] text-[24px] md:text-[32px] lg:text-[40px] 2xl:text-[48px] font-medium">
           Would you like a Cup of Delicious Coffee?
         </h1>
-        <p className="raleway text-[#ffff] pb-4 md:pb-5 lg:pb-6 2xl:pb-7">
+        <p className="raleway text-[#ffff] pb-4 md:pb-5 lg:pb-6 2xl:pb-7 text-[14px] md:text-[16px]">
           It's coffee time - Sip & Savor - Relaxation in every sip! Get the
           nostalgia back!! Your companion of every moment!!! Enjoy the beautiful
           moments and make them memorable.

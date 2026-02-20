@@ -3,6 +3,7 @@
 
 body {
   font-family: "Rancho", cursive;
+  scroll-behavior: smooth;
 }
 .raleway {
   font-family: "Raleway", sans-serif;
@@ -17,6 +18,19 @@ body {
 
 .hero {
   background-image: url("./assets/images/banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.products {
+  background-image: url("../src/assets/images/productBg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer {
+  background-image: url("../src/assets/images/footer.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
