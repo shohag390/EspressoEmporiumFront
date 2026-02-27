@@ -1,6 +1,6 @@
 import React from "react";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import { NavLink } from "react-router";
+import { Link } from "react-router";
 
 const Hero = () => {
   return (
@@ -14,13 +14,15 @@ const Hero = () => {
           nostalgia back!! Your companion of every moment!!! Enjoy the beautiful
           moments and make them memorable.
         </p>
-        <button
-          className="text-[16px] md:text-[17px] lg:text-[18px] 2xl:text-[20px] px-5 md:px-6 lg:px-7 2xl:px-8 py-.5 md:py-1.5 lg:py-2 border border-[#E3B577] hover:border-[#ffff] text-[#242222] hover:text-white bg-[#E3B577] hover:bg-transparent duration-300 flex items-center gap-1 md:gap-2 group"
-          to={"/login"}
-        >
-          <span>Learn More</span>
-          <MdKeyboardDoubleArrowRight className="group-hover:translate-x-1.5 duration-500" />
-        </button>
+        <div className="inline-block">
+          <Link
+            className="text-[16px] md:text-[17px] lg:text-[18px] 2xl:text-[20px] px-5 md:px-6 lg:px-7 2xl:px-8 py-1 md:py-1.5 lg:py-2 border border-[#E3B577] hover:border-[#ffff] text-[#242222] hover:text-white bg-[#E3B577] hover:bg-transparent duration-300 flex items-center gap-1 md:gap-2 group"
+            to={"/login"}
+          >
+            <span>Learn More</span>
+            <MdKeyboardDoubleArrowRight className="group-hover:translate-x-1.5 duration-500" />
+          </Link>
+        </div>
       </div>
     </div>
   );

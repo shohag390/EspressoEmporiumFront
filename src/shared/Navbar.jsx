@@ -17,8 +17,8 @@ const navlinks = [
   },
   {
     id: 3,
-    name: "Manu",
-    path: "/manu",
+    name: "All Coffee",
+    path: "/coffees",
   },
   {
     id: 4,

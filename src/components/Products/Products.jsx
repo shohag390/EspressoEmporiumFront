@@ -28,6 +28,7 @@ import image26 from "../../assets/images/p26.jpg";
 import image27 from "../../assets/images/p27.webp";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link } from "react-router";
+import SeectionHeader from "../../shared/SeectionHeader";
 
 const coffeeData = [
   {
@@ -123,22 +124,18 @@ const coffeeData = [
 const Products = () => {
   return (
     <div className="px-6 md:px-12 lg:px-35 2xl:px-50 products py-6 md:py-8 lg:py-10 2xl:py-14">
-      <div className="text-center pb-5 md:pb-6 lg:pb-7 2xl:pb-8">
-        <p className="text-[#1B1A1A] raleway text-[14px] md:text-[16px]">
-          --- Sip & Savor ---
-        </p>
-        <h2 className="text-[#331A15] text-[20px] md:text-[25px] lg:text-[30px] 2xl:text-[35px] font-medium lg:font-semibold 2xl:font-bold text-shadow-lg">
-          Our Popular Products
-        </h2>
-      </div>
+      <SeectionHeader
+        title="--- Sip & Savor ---"
+        subtitle="Our Popular Products"
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 2xl:gap-5">
         {coffeeData.map((coffee) => (
           <Product key={coffee?._id} coffee={coffee} />
         ))}
       </div>
-      <div className="w-full flex items-center justify-center pt-10">
+      <div className="w-full flex items-center justify-center pt-7 md:pt-8 lg:pt-9 2xl:pt-10">
         <Link
-          to={"/manu"}
+          to={"/coffees"}
           className="text-[16px] md:text-[17px] lg:text-[18px] 2xl:text-[20px] px-5 md:px-6 lg:px-7 2xl:px-8 py-.5 md:py-1.5 lg:py-2 border border-[#E3B577] hover:border-[#242222] text-[#242222] bg-[#E3B577] hover:bg-transparent transition-all duration-300 flex items-center gap-1 md:gap-2 group"
         >
           <span> All Coffee</span>
