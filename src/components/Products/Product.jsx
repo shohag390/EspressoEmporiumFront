@@ -3,8 +3,6 @@ import { MdEdit } from "react-icons/md";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 
 const Product = ({ coffee }) => {
-  console.log(coffee);
-
   return (
     <div className="group gap-5 bg-[#eceae3bd] p-1 md:p-2 lg:p-3">
       <div className="h-40 md:h-45 lg:h-50 2xl:h-55 w-full relative overflow-hidden">

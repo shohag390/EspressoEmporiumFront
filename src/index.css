@@ -28,6 +28,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.contact {
+  background-image: url("../src/assets/images/contactBg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 .footer {
   background-image: url("../src/assets/images/footer.jpg");

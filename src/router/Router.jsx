@@ -6,7 +6,7 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import About from "../pages/About";
 import Manu from "../pages/Manu";
-import Contact from "../pages/Contact";
+import ContactsPage from "../pages/ContactsPage";
 
 export const router = createBrowserRouter([
   {
@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/contact",
-        Component: Contact,
+        Component: ContactsPage,
       },
       {
         path: "/login",

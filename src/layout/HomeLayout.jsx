@@ -3,7 +3,7 @@ import FeaturesItem from "../components/Feature/FeaturesItem";
 import Hero from "../components/Hero";
 import Instagrams from "../components/Instagrams/Instagrams";
 import Products from "../components/Products/Products";
-import Contact from "../pages/Contact";
+import Contact from "../components/Contact";
 
 const HomeLayout = () => {
   return (
@@ -13,7 +13,6 @@ const HomeLayout = () => {
       <Products />
       <AboutUs />
       <Instagrams />
-      <Contact />
     </div>
   );
 };
