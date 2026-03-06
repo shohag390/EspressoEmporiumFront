@@ -1,41 +1,37 @@
-import { FaCartShopping, FaEye } from "react-icons/fa6";
-import { MdEdit } from "react-icons/md";
-import { RiDeleteBin5Fill } from "react-icons/ri";
+import { MdOutlineZoomOutMap } from "react-icons/md";
 
 const Product = ({ coffee }) => {
   return (
-    <div className="group gap-5 bg-[#eceae3bd] p-1 md:p-2 lg:p-3">
-      <div className="h-40 md:h-45 lg:h-50 2xl:h-55 w-full relative overflow-hidden">
+    <div className="relative group w-full bg-[#eceae3bd] overflow-hidden duration-500">
+      {/* Image */}
+      <div className="relative h-48 md:h-52 lg:h-56 overflow-hidden">
         <img
-          className="h-full w-full group-hover:scale-105 duration-500"
           src={coffee?.photo}
-          alt=""
+          alt={coffee?.name}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
+
+        {/* Overlay on hover */}
+        <div className="absolute inset-0 bg-[#eceae3bd] bg-opacity-30 opacity-0 group-hover:opacity-100  duration-500 flex items-center justify-center">
+          <button className="text-[#331A15] p-3 text-[30px] hover:scale-120 cursor-pointer duration-300">
+            <MdOutlineZoomOutMap />
+          </button>
+        </div>
       </div>
-      <div className="flex items-center justify-between pt-1 md:pt-2">
-        <h2 className="text-[#331A15] font-medium text-[20px] md:text-[22px] lg:text-[24px] 2xl:text-[26px]">
-          {coffee?.name}
-        </h2>
-        <h2 className="text-[#E3B577] font-medium text-[18px] md:text-[20px] lg:text-[22px] 2xl:text-[24px]">
+
+      {/* Content */}
+      <div className="p-4 flex justify-between">
+        <div>
+          <h2 className="text-[#331A15] font-semibold text-lg md:text-xl lg:text-2xl">
+            {coffee?.name}
+          </h2>
+          <p className="text-gray-500 text-sm md:text-base">
+            Chef: {coffee?.chef}
+          </p>
+        </div>
+        <span className="text-[#E3B577] font-medium text-md md:text-lg">
           $ {coffee?.price}
-        </h2>
-      </div>
-      <p className="raleway text-[14px] md:text-[16px] text-[#1b1a1acc]">
-        Chef: {coffee?.chef}
-      </p>
-      <div className="flex items-center gap-2 pt-1 md:pt-2">
-        <button className="bg-[#ECEAE3] text-[#D2B48C] hover:bg-[#D2B48C] h-8 md:h-9 lg:h-10 w-full hover:text-[#ffff] text-[22px] flex items-center justify-center active:scale-[.9] duration-500 cursor-pointer">
-          <FaEye />
-        </button>
-        <button className="bg-[#ECEAE3] text-[#3C393B] hover:bg-[#3C393B] h-8 md:h-9 lg:h-10 w-full hover:text-[#ffff] text-[22px] flex items-center justify-center active:scale-[.9] duration-500 cursor-pointer">
-          <MdEdit />
-        </button>
-        <button className="bg-[#ECEAE3] text-[#6F4E37] hover:bg-[#6F4E37] h-8 md:h-9 lg:h-10 w-full hover:text-[#ffff] text-[22px] flex items-center justify-center active:scale-[.9] duration-500 cursor-pointer">
-          <FaCartShopping />
-        </button>
-        <button className="bg-[#ECEAE3] text-[#EA4744] hover:bg-[#EA4744] h-8 md:h-9 lg:h-10 w-full hover:text-[#ffff] text-[22px] flex items-center justify-center active:scale-[.9] duration-500 cursor-pointer">
-          <RiDeleteBin5Fill />
-        </button>
+        </span>
       </div>
     </div>
   );

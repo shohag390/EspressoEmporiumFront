@@ -395,7 +395,7 @@ const Manu = () => {
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar */}
         <div className="w-full lg:w-1/4">
-          <div className="bg-white p-6 rounded-xl shadow-md lg:sticky lg:top-24">
+          <div className="bg-white p-6 rounded-xl shadow-md">
             <h2 className="text-2xl font-semibold mb-4 text-[#331A15]">
               Categories
             </h2>
@@ -423,9 +423,7 @@ const Manu = () => {
           {/* Top Controls */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
             <div>
-              <h1 className="text-3xl font-bold text-[#331A15]">
-                Our All Coffees
-              </h1>
+              <h1 className="text-3xl font-bold text-[#331A15]">All Coffees</h1>
               <p className="text-gray-600 mt-1">
                 {filteredCoffee.length} products found
               </p>
