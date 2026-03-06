@@ -56,18 +56,6 @@ const DashboardHome = () => {
           </BarChart>
         </ResponsiveContainer>
       </div>
-
-      {/* Recent Activity */}
-      <div className="bg-white p-6 rounded-xl shadow">
-        <h2 className="text-xl font-semibold mb-4">Recent Activity</h2>
-
-        <ul className="space-y-3">
-          <li className="border-b pb-2">☕ New Coffee Added</li>
-          <li className="border-b pb-2">🛒 New Order Received</li>
-          <li className="border-b pb-2">👤 New User Registered</li>
-          <li className="border-b pb-2">⭐ Customer Review Added</li>
-        </ul>
-      </div>
     </div>
   );
 };

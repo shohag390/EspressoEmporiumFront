@@ -13,6 +13,7 @@ import DashboardHome from "../components/Dashboard/DashboardHome";
 import Profile from "../components/Dashboard/Profile";
 import MyCoffees from "../components/Dashboard/MyCoffees";
 import UpdateProfile from "../components/Dashboard/UpdateProfile";
+import UpdateCoffee from "../components/Dashboard/UpdateCoffee";
 
 export const router = createBrowserRouter([
   {
@@ -69,6 +70,7 @@ export const router = createBrowserRouter([
         path: "updateProfile",
         Component: UpdateProfile,
       },
+      { path: "updateCoffee/:id", Component: UpdateCoffee },
     ],
   },
 ]);
