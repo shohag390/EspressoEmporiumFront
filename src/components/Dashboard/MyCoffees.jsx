@@ -15,8 +15,6 @@ const MyCoffees = () => {
   }, []);
 
   const handleDelete = (id) => {
-    console.log(id);
-
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -27,11 +25,26 @@ const MyCoffees = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        // Swal.fire({
-        //   title: "Deleted!",
-        //   text: "Your file has been deleted.",
-        //   icon: "success",
-        // });
+        fetch(`http://localhost:3000/coffees/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data?.deletedCount) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+              setCoffeeData((prev) =>
+                prev.filter((coffee) => coffee._id !== id),
+              );
+            }
+          })
+          .catch((error) => {
+            Swal.fire("Error!", "Something went wrong.", "error");
+          });
       }
     });
   };
