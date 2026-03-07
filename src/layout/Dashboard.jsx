@@ -52,6 +52,12 @@ const Dashboard = () => {
             >
               My Coffees
             </Link>
+            <Link
+              to="allCoffee"
+              className="bg-gray-100 hover:bg-orange-500 hover:text-white transition px-4 py-2 rounded-lg"
+            >
+              All Coffee
+            </Link>
           </div>
         </div>
 

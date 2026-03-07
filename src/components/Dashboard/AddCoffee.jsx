@@ -1,26 +1,30 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const AddCoffee = () => {
-  const [coffee, setCoffee] = useState({
-    name: "",
-    chef: "",
-    supplier: "",
-    taste: "",
-    category: "",
-    details: "",
-    photo: "",
-    price: "",
-  });
-
-  const handleChange = (e) => {
-    setCoffee({ ...coffee, [e.target.name]: e.target.value });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Coffee Data:", coffee);
-    alert("Coffee Added!");
-    // এখানে API call বা backend logic যাবে
+    const form = e.target;
+    const formData = new FormData(form);
+    const newCoffee = Object.fromEntries(formData.entries());
+    console.log(newCoffee);
+    fetch(`http://localhost:3000/coffees`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newCoffee),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.insertedId) {
+          toast.success("Added Coffee");
+        }
+        form.reset();
+      })
+      .catch((error) => {
+        toast.error("Failed to add coffee");
+      });
   };
 
   return (
@@ -35,8 +39,6 @@ const AddCoffee = () => {
           type="text"
           name="name"
           placeholder="Coffee Name"
-          value={coffee.name}
-          onChange={handleChange}
           className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
 
@@ -45,8 +47,6 @@ const AddCoffee = () => {
           type="text"
           name="chef"
           placeholder="Chef Name"
-          value={coffee.chef}
-          onChange={handleChange}
           className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
 
@@ -55,8 +55,6 @@ const AddCoffee = () => {
           type="text"
           name="supplier"
           placeholder="Supplier"
-          value={coffee.supplier}
-          onChange={handleChange}
           className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
 
@@ -65,8 +63,6 @@ const AddCoffee = () => {
           type="text"
           name="taste"
           placeholder="Taste"
-          value={coffee.taste}
-          onChange={handleChange}
           className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
 
@@ -75,8 +71,6 @@ const AddCoffee = () => {
           type="text"
           name="category"
           placeholder="Category"
-          value={coffee.category}
-          onChange={handleChange}
           className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
 
@@ -84,8 +78,6 @@ const AddCoffee = () => {
         <textarea
           name="details"
           placeholder="Details"
-          value={coffee.details}
-          onChange={handleChange}
           rows="3"
           className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
@@ -95,8 +87,6 @@ const AddCoffee = () => {
           type="text"
           name="photo"
           placeholder="Photo URL"
-          value={coffee.photo}
-          onChange={handleChange}
           className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
 
@@ -105,8 +95,6 @@ const AddCoffee = () => {
           type="number"
           name="price"
           placeholder="Price"
-          value={coffee.price}
-          onChange={handleChange}
           className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
 

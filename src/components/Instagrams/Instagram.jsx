@@ -1,8 +1,6 @@
 import React from "react";
 
 const Instagram = ({ image }) => {
-  console.log(image);
-
   return (
     <div className="h-55 md:h-70 lg:h-80 2xl:h-100 w-full overflow-hidden relative group">
       <img

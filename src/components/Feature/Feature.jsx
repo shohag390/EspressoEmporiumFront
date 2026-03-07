@@ -1,8 +1,6 @@
 import React from "react";
 
 const Feature = ({ item }) => {
-  console.log(item);
-
   return (
     <div>
       <div className="pb-1 md:pb-2 lg:pb-3">

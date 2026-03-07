@@ -14,6 +14,7 @@ import Profile from "../components/Dashboard/Profile";
 import MyCoffees from "../components/Dashboard/MyCoffees";
 import UpdateProfile from "../components/Dashboard/UpdateProfile";
 import UpdateCoffee from "../components/Dashboard/UpdateCoffee";
+import AllCoffees from "../components/Dashboard/AllCoffees";
 
 export const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ export const router = createBrowserRouter([
       {
         path: "myCoffee",
         Component: MyCoffees,
+      },
+      {
+        path: "allCoffee",
+        Component: AllCoffees,
       },
       {
         path: "updateProfile",

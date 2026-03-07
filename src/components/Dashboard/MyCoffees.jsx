@@ -1,53 +1,39 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router";
 import { MdEdit } from "react-icons/md";
 import { RiDeleteBin5Fill } from "react-icons/ri";
-
-// Example Coffee Data
-const initialCoffees = [
-  {
-    _id: "1",
-    name: "Irish Coffee",
-    chef: "Mr. Robin",
-    supplier: "Irish Beans",
-    taste: "Bold",
-    category: "Special Coffee",
-    details: "Coffee with cream.",
-    photo: "https://i.pravatar.cc/150?img=32",
-    price: 300,
-  },
-  {
-    _id: "2",
-    name: "Espresso",
-    chef: "Mr. John",
-    supplier: "Espresso Beans",
-    taste: "Strong",
-    category: "Regular",
-    details: "Classic espresso shot.",
-    photo: "https://i.pravatar.cc/150?img=33",
-    price: 250,
-  },
-  {
-    _id: "3",
-    name: "Cappuccino",
-    chef: "Ms. Anna",
-    supplier: "Italian Beans",
-    taste: "Mild",
-    category: "Special Coffee",
-    details: "Espresso with steamed milk.",
-    photo: "https://i.pravatar.cc/150?img=34",
-    price: 280,
-  },
-];
+import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 const MyCoffees = () => {
-  const [coffees, setCoffees] = useState(initialCoffees);
+  const [coffeeData, setCoffeeData] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/coffees`)
+      .then((res) => res.json())
+      .then((data) => setCoffeeData(data));
+  }, []);
 
   const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete this coffee?")) {
-      setCoffees(coffees.filter((coffee) => coffee._id !== id));
-      alert("Coffee deleted successfully!");
-    }
+    console.log(id);
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Swal.fire({
+        //   title: "Deleted!",
+        //   text: "Your file has been deleted.",
+        //   icon: "success",
+        // });
+      }
+    });
   };
 
   return (
@@ -74,7 +60,7 @@ const MyCoffees = () => {
           </thead>
 
           <tbody>
-            {coffees.map((coffee, index) => (
+            {coffeeData.map((coffee, index) => (
               <tr
                 key={coffee._id}
                 className={`transition duration-300 ${
@@ -103,13 +89,13 @@ const MyCoffees = () => {
                   <div className="flex items-center gap-6">
                     <Link
                       to={`/dashboard/updateCoffee/${coffee._id}`}
-                      className="bg-blue-500 hover:bg-blue-600 text-white h-4 w-4"
+                      className="bg-blue-500 hover:bg-blue-600 text-white h-8 w-8 flex items-center justify-center"
                     >
                       <MdEdit />
                     </Link>
                     <button
                       onClick={() => handleDelete(coffee._id)}
-                      className="bg-red-500 hover:bg-red-600 text-white "
+                      className="bg-red-500 hover:bg-red-600 text-white h-8 w-8 flex items-center justify-center"
                     >
                       <RiDeleteBin5Fill />
                     </button>

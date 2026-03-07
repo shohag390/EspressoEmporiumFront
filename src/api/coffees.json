@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Espresso",
+    "chef": "John Smith",
+    "supplier": "Italian Beans",
+    "taste": "Strong",
+    "category": "Hot Coffee",
+    "details": "Rich aromatic coffee brewed from premium roasted beans delivering bold flavor smooth texture warm aroma and energizing experience perfect for starting the day.",
+    "photo": "https://i.ibb.co.com/LmQBzRr/p1.jpg",
+    "price": 5
+  },
+  {
+    "name": "Cappuccino",
+    "chef": "Maria Rossi",
+    "supplier": "Coffee World",
+    "taste": "Creamy",
+    "category": "Hot Coffee",
+    "details": "Smooth creamy coffee blended with fresh milk creating balanced taste delightful aroma comforting warmth and enjoyable experience loved by coffee drinkers everywhere.",
+    "photo": "https://i.ibb.co.com/mV4CP86m/p2.webp",
+    "price": 6
+  },
+  {
+    "name": "Latte",
+    "chef": "David Brown",
+    "supplier": "Premium Beans",
+    "taste": "Smooth",
+    "category": "Hot Coffee",
+    "details": "Delicious latte coffee prepared using fresh espresso and steamed milk offering mild flavor silky texture pleasant aroma and relaxing taste perfect for daily enjoyment.",
+    "photo": "https://i.ibb.co.com/3YFtddhd/p3.jpg",
+    "price": 6.5
+  },
+  {
+    "name": "Americano",
+    "chef": "James Wilson",
+    "supplier": "Global Coffee",
+    "taste": "Light",
+    "category": "Hot Coffee",
+    "details": "Classic americano coffee made by adding hot water to espresso creating smooth balanced taste light body pleasant aroma and refreshing experience for coffee lovers.",
+    "photo": "https://i.ibb.co.com/b5XYpRKj/p4.jpg",
+    "price": 4
+  },
+  {
+    "name": "Mocha",
+    "chef": "Sophia Lee",
+    "supplier": "Sweet Beans",
+    "taste": "Chocolatey",
+    "category": "Special Coffee",
+    "details": "Sweet mocha coffee blended with chocolate syrup espresso and steamed milk producing creamy texture delightful aroma rich flavor and dessert like coffee experience.",
+    "photo": "https://i.ibb.co.com/1GQn7FH9/p5.webp",
+    "price": 7
+  },
+  {
+    "name": "Cold Brew",
+    "chef": "Daniel Clark",
+    "supplier": "Fresh Beans",
+    "taste": "Smooth",
+    "category": "Cold Coffee",
+    "details": "Cold brew coffee slowly steeped in cold water for hours producing smooth taste low acidity natural sweetness refreshing texture and enjoyable drink during warm days.",
+    "photo": "https://i.ibb.co.com/tw2CpgBc/p6.jpg",
+    "price": 6
+  },
+  {
+    "name": "Flat White",
+    "chef": "Oliver Scott",
+    "supplier": "Urban Beans",
+    "taste": "Velvety",
+    "category": "Hot Coffee",
+    "details": "Flat white coffee crafted with rich espresso and silky microfoam milk creating velvety texture balanced taste mild aroma and smooth enjoyable coffee drinking experience.",
+    "photo": "https://i.ibb.co.com/cSFw6HC6/p7.jpg",
+    "price": 6
+  },
+  {
+    "name": "Macchiato",
+    "chef": "Lucas Martin",
+    "supplier": "Coffee Hub",
+    "taste": "Bold",
+    "category": "Hot Coffee",
+    "details": "Macchiato coffee featuring bold espresso topped with small layer of steamed milk creating strong flavor smooth finish rich aroma and authentic Italian coffee style.",
+    "photo": "https://i.ibb.co.com/n8Cq8XFp/p8.jpg",
+    "price": 5
+  },
+  {
+    "name": "Iced Latte",
+    "chef": "Emma Davis",
+    "supplier": "Cool Beans",
+    "taste": "Milky",
+    "category": "Cold Coffee",
+    "details": "Refreshing iced latte prepared with chilled espresso milk and ice cubes delivering smooth creamy taste cool sensation delightful aroma perfect drink for warm afternoons.",
+    "photo": "https://i.ibb.co.com/hJ9xjJfy/p9.jpg",
+    "price": 6
+  },
+  {
+    "name": "Caramel Latte",
+    "chef": "Noah Taylor",
+    "supplier": "Golden Beans",
+    "taste": "Sweet",
+    "category": "Special Coffee",
+    "details": "Caramel latte coffee blended with sweet caramel syrup fresh milk and espresso creating creamy texture sweet flavor delightful aroma and satisfying dessert style beverage.",
+    "photo": "https://i.ibb.co.com/5XT0b8hS/p10.jpg",
+    "price": 7
+  },
+  {
+    "name": "Hazelnut Coffee",
+    "chef": "Liam Anderson",
+    "supplier": "Flavor Beans",
+    "taste": "Nutty",
+    "category": "Special Coffee",
+    "details": "Hazelnut flavored coffee made with premium roasted beans producing nutty aroma smooth taste balanced sweetness and delicious comforting drink for relaxing coffee moments.",
+    "photo": "https://i.ibb.co.com/tktxL45/p11.jpg",
+    "price": 6
+  },
+  {
+    "name": "Irish Coffee",
+    "chef": "Ethan White",
+    "supplier": "Classic Beans",
+    "taste": "Rich",
+    "category": "Special Coffee",
+    "details": "Traditional Irish coffee combining hot coffee creamy topping and smooth flavor delivering rich aroma warm sensation delightful taste and classic beverage loved worldwide.",
+    "photo": "https://i.ibb.co.com/rgqKpyR/p12.jpg",
+    "price": 8
+  },
+  {
+    "name": "Vanilla Latte",
+    "chef": "Mason Hall",
+    "supplier": "Vanilla Beans",
+    "taste": "Sweet",
+    "category": "Special Coffee",
+    "details": "Vanilla latte coffee infused with sweet vanilla syrup steamed milk and espresso creating creamy flavor smooth aroma comforting taste and delightful coffee experience.",
+    "photo": "https://i.ibb.co.com/XZVsj6fq/p13.jpg",
+    "price": 7
+  },
+  {
+    "name": "Affogato",
+    "chef": "Henry Young",
+    "supplier": "Dessert Beans",
+    "taste": "Creamy",
+    "category": "Special Coffee",
+    "details": "Affogato dessert coffee featuring hot espresso poured over creamy vanilla ice cream producing rich flavor sweet aroma smooth texture and indulgent treat.",
+    "photo": "https://i.ibb.co.com/BKjL3kFj/p14.jpg",
+    "price": 9
+  },
+  {
+    "name": "Turkish Coffee",
+    "chef": "Ali Demir",
+    "supplier": "Middle East Beans",
+    "taste": "Strong",
+    "category": "Hot Coffee",
+    "details": "Traditional Turkish coffee brewed using finely ground beans creating strong flavor thick texture rich aroma and authentic cultural coffee experience.",
+    "photo": "https://i.ibb.co.com/G4xT7y7j/p15.jpg",
+    "price": 5
+  },
+  {
+    "name": "Vietnamese Coffee",
+    "chef": "Minh Tran",
+    "supplier": "Asian Beans",
+    "taste": "Sweet",
+    "category": "Cold Coffee",
+    "details": "Vietnamese coffee prepared with strong brew and sweet condensed milk producing bold flavor creamy texture rich aroma and refreshing drink.",
+    "photo": "https://i.ibb.co.com/gZL6r436/p16.jpg",
+    "price": 6
+  },
+  {
+    "name": "Nitro Coffee",
+    "chef": "Chris Walker",
+    "supplier": "Nitro Beans",
+    "taste": "Smooth",
+    "category": "Cold Coffee",
+    "details": "Nitro cold brew coffee infused with nitrogen creating smooth creamy texture cascading foam mild sweetness refreshing taste and modern specialty coffee experience.",
+    "photo": "https://i.ibb.co.com/xS39SL48/p17.jpg",
+    "price": 7
+  },
+  {
+    "name": "Cortado",
+    "chef": "Carlos Lopez",
+    "supplier": "Spanish Beans",
+    "taste": "Balanced",
+    "category": "Hot Coffee",
+    "details": "Cortado coffee made with equal parts espresso and warm milk producing balanced flavor smooth texture rich aroma and delightful Spanish coffee style.",
+    "photo": "https://i.ibb.co.com/ccFkr4zM/p18.jpg",
+    "price": 6
+  },
+  {
+    "name": "Ristretto",
+    "chef": "Marco Silva",
+    "supplier": "Elite Beans",
+    "taste": "Intense",
+    "category": "Hot Coffee",
+    "details": "Ristretto espresso shot prepared with limited water delivering concentrated flavor strong aroma thick texture and intense coffee experience.",
+    "photo": "https://i.ibb.co.com/pvnqCPZR/p19.jpg",
+    "price": 5
+  },
+  {
+    "name": "Frappuccino",
+    "chef": "Jessica Moore",
+    "supplier": "Ice Beans",
+    "taste": "Sweet",
+    "category": "Cold Coffee",
+    "details": "Frappuccino blended iced coffee drink mixed with milk ice and sweet syrup creating creamy texture refreshing taste and enjoyable dessert style beverage.",
+    "photo": "https://i.ibb.co.com/nM29GJXW/p20.jpg",
+    "price": 7
+  }
+]
