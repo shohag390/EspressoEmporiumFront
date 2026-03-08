@@ -29,11 +29,11 @@ const Product = ({ coffee }) => {
           <h2 className="text-[#331A15] font-semibold text-lg md:text-xl lg:text-2xl">
             {coffee?.name}
           </h2>
-          <p className="text-gray-500 text-sm md:text-base">
+          <p className="text-gray-500 text-[14px] md:text-[16px] raleway">
             Chef: {coffee?.chef}
           </p>
         </div>
-        <span className="text-[#E3B577] font-medium text-md md:text-lg">
+        <span className="text-[#E3B577] font-medium text-[20px] md:text-[25px]">
           $ {coffee?.price}
         </span>
       </div>

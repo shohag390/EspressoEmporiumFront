@@ -12,7 +12,7 @@ const Profile = () => {
     <div className="flex flex-col items-center w-full space-y-8">
       {/* Banner */}
       <div className="w-full relative">
-        <div className="h-32 bg-gradient-to-r from-orange-400 to-orange-600"></div>
+        <div className="h-32 bg-orange-600"></div>
         {/* Avatar */}
         <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2">
           <img
