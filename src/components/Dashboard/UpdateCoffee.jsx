@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { toast } from "react-toastify";
+import useProduct from "../../hooks/useProduct";
 
 const UpdateCoffee = () => {
   const { id } = useParams();
-
+  const { getSingleCoffee, updateCoffee, setCoffeeData } = useProduct();
   const [coffee, setCoffee] = useState({});
+
   useEffect(() => {
-    fetch(`http://localhost:3000/coffees/${id}`)
-      .then((res) => res.json())
-      .then((data) => setCoffee(data));
-  }, [id]);
+    getSingleCoffee(id).then((data) => setCoffee(data));
+  }, [id, getSingleCoffee]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,20 +18,16 @@ const UpdateCoffee = () => {
     const formData = new FormData(form);
     const updatedCoffee = Object.fromEntries(formData.entries());
 
-    fetch(`http://localhost:3000/coffees/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedCoffee),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data?.modifiedCount) {
-          toast.success("Updated Coffee");
-        }
-      });
+    updateCoffee(id, updatedCoffee).then((data) => {
+      if (data?.modifiedCount) {
+        toast.success("Updated Coffee");
+        setCoffeeData((prev) =>
+          prev.map((item) =>
+            item._id === id ? { ...item, ...updatedCoffee } : item,
+          ),
+        );
+      }
+    });
   };
   return (
     <div className="w-full">
