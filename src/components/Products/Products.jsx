@@ -2,16 +2,10 @@ import Product from "./Product";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link } from "react-router";
 import SeectionHeader from "../../shared/SeectionHeader";
-import { useEffect, useState } from "react";
+import useProduct from "../../hooks/useProduct";
 
 const Products = () => {
-  const [coffeeData, setCoffeeData] = useState([]);
-
-  useEffect(() => {
-    fetch(`http://localhost:3000/coffees`)
-      .then((res) => res.json())
-      .then((data) => setCoffeeData(data));
-  }, []);
+  const { coffeeData } = useProduct();
 
   const coffees = coffeeData.slice(0, 8);
 

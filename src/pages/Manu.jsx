@@ -3,6 +3,7 @@ import Product from "../components/Products/Product";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 import { FaList } from "react-icons/fa6";
 import { useEffect } from "react";
+import useProduct from "../hooks/useProduct";
 
 const Manu = () => {
   const [search, setSearch] = useState("");
@@ -11,13 +12,7 @@ const Manu = () => {
   const [maxPrice, setMaxPrice] = useState("");
   const [sortOrder, setSortOrder] = useState("");
   const [view, setView] = useState("grid");
-  const [coffeeData, setCoffeeData] = useState([]);
-
-  useEffect(() => {
-    fetch(`http://localhost:3000/coffees`)
-      .then((res) => res.json())
-      .then((data) => setCoffeeData(data));
-  }, []);
+  const { coffeeData } = useProduct();
 
   const categories = [
     "All",

@@ -15,6 +15,7 @@ import MyCoffees from "../components/Dashboard/MyCoffees";
 import UpdateProfile from "../components/Dashboard/UpdateProfile";
 import UpdateCoffee from "../components/Dashboard/UpdateCoffee";
 import AllCoffees from "../components/Dashboard/AllCoffees";
+import CoffeeInfo from "../components/Products/CoffeeInfo";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: "/coffees",
         Component: Manu,
+      },
+      {
+        path: "/coffee/:id",
+        Component: CoffeeInfo,
       },
       {
         path: "/contact",
@@ -75,7 +80,10 @@ export const router = createBrowserRouter([
         path: "updateProfile",
         Component: UpdateProfile,
       },
-      { path: "updateCoffee/:id", Component: UpdateCoffee },
+      {
+        path: "updateCoffee/:id",
+        Component: UpdateCoffee,
+      },
     ],
   },
 ]);

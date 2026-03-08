@@ -1,68 +1,38 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-
-// Example coffee data (replace with API/backend later)
-const initialCoffees = [
-  {
-    _id: "1",
-    name: "Irish Coffee",
-    chef: "Mr. Robin",
-    supplier: "Irish Beans",
-    taste: "Bold",
-    category: "Special Coffee",
-    details: "Coffee with cream.",
-    photo: "https://i.pravatar.cc/150?img=32",
-    price: 300,
-  },
-  {
-    _id: "2",
-    name: "Espresso",
-    chef: "Mr. John",
-    supplier: "Espresso Beans",
-    taste: "Strong",
-    category: "Regular",
-    details: "Classic espresso shot.",
-    photo: "https://i.pravatar.cc/150?img=33",
-    price: 250,
-  },
-  {
-    _id: "3",
-    name: "Cappuccino",
-    chef: "Ms. Anna",
-    supplier: "Italian Beans",
-    taste: "Mild",
-    category: "Special Coffee",
-    details: "Espresso with steamed milk.",
-    photo: "https://i.pravatar.cc/150?img=34",
-    price: 280,
-  },
-];
+import { toast } from "react-toastify";
 
 const UpdateCoffee = () => {
   const { id } = useParams();
-  const [coffee, setCoffee] = useState(null);
 
+  const [coffee, setCoffee] = useState({});
   useEffect(() => {
-    const selectedCoffee = initialCoffees.find((c) => c._id === id);
-    if (selectedCoffee) {
-      setCoffee(selectedCoffee);
-    }
+    fetch(`http://localhost:3000/coffees/${id}`)
+      .then((res) => res.json())
+      .then((data) => setCoffee(data));
   }, [id]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCoffee({ ...coffee, [name]: value });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can call API to update coffee
-    alert("Coffee Updated!\n" + JSON.stringify(coffee, null, 2));
+    const form = e.target;
+    const formData = new FormData(form);
+    const updatedCoffee = Object.fromEntries(formData.entries());
+
+    fetch(`http://localhost:3000/coffees/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedCoffee),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data?.modifiedCount) {
+          toast.success("Updated Coffee");
+        }
+      });
   };
-
-  if (!coffee)
-    return <div className="p-6 text-center">Loading coffee data...</div>;
-
   return (
     <div className="w-full">
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center">
@@ -73,15 +43,14 @@ const UpdateCoffee = () => {
         {/* Photo Preview */}
         <div className="flex flex-col items-center">
           <img
-            src={coffee.photo}
-            alt={coffee.name}
+            src={coffee?.photo}
+            alt="Image"
             className="w-28 h-28 rounded-full border-4 border-orange-500 object-cover"
           />
           <input
             type="text"
             name="photo"
-            value={coffee.photo}
-            onChange={handleChange}
+            defaultValue={coffee?.photo}
             placeholder="Photo URL"
             className="mt-2 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
           />
@@ -91,8 +60,7 @@ const UpdateCoffee = () => {
         <input
           type="text"
           name="name"
-          value={coffee.name}
-          onChange={handleChange}
+          defaultValue={coffee?.name}
           placeholder="Coffee Name"
           className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
@@ -101,8 +69,7 @@ const UpdateCoffee = () => {
         <input
           type="text"
           name="chef"
-          value={coffee.chef}
-          onChange={handleChange}
+          defaultValue={coffee?.chef}
           placeholder="Chef Name"
           className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
@@ -111,8 +78,7 @@ const UpdateCoffee = () => {
         <input
           type="text"
           name="supplier"
-          value={coffee.supplier}
-          onChange={handleChange}
+          defaultValue={coffee?.supplier}
           placeholder="Supplier"
           className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
@@ -121,8 +87,7 @@ const UpdateCoffee = () => {
         <input
           type="text"
           name="taste"
-          value={coffee.taste}
-          onChange={handleChange}
+          defaultValue={coffee?.taste}
           placeholder="Taste"
           className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
@@ -131,8 +96,7 @@ const UpdateCoffee = () => {
         <input
           type="text"
           name="category"
-          value={coffee.category}
-          onChange={handleChange}
+          defaultValue={coffee?.category}
           placeholder="Category"
           className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
@@ -140,9 +104,8 @@ const UpdateCoffee = () => {
         {/* Details */}
         <textarea
           name="details"
-          value={coffee.details}
-          onChange={handleChange}
           placeholder="Details"
+          defaultValue={coffee?.details}
           className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
 
@@ -150,9 +113,8 @@ const UpdateCoffee = () => {
         <input
           type="number"
           name="price"
-          value={coffee.price}
-          onChange={handleChange}
           placeholder="Price"
+          defaultValue={coffee?.price}
           className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
 

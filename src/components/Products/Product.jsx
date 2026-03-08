@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { MdOutlineZoomOutMap } from "react-icons/md";
 
 const Product = ({ coffee }) => {
@@ -13,9 +14,12 @@ const Product = ({ coffee }) => {
 
         {/* Overlay on hover */}
         <div className="absolute inset-0 bg-[#eceae3bd] bg-opacity-30 opacity-0 group-hover:opacity-100  duration-500 flex items-center justify-center">
-          <button className="text-[#331A15] p-3 text-[30px] hover:scale-120 cursor-pointer duration-300">
+          <Link
+            to={`/coffee/${coffee._id}`}
+            className="text-[#331A15] p-3 text-[30px] hover:scale-120 cursor-pointer duration-300"
+          >
             <MdOutlineZoomOutMap />
-          </button>
+          </Link>
         </div>
       </div>
 
