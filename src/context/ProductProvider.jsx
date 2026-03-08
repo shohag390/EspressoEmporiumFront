@@ -12,7 +12,19 @@ const ProductProvider = ({ children }) => {
       .then((data) => setCoffeeData(data));
   }, []);
 
-  const productInfo = { coffeeData };
+  // Delete Coffee (API only)
+  const deleteCoffee = async (id) => {
+    return fetch(`${baseURL}/coffees/${id}`, {
+      method: "DELETE",
+    }).then((res) => res.json());
+  };
+
+  const productInfo = {
+    coffeeData,
+    setCoffeeData,
+    deleteCoffee,
+    updateCoffee,
+  };
 
   return <ProductContext value={productInfo}>{children}</ProductContext>;
 };
