@@ -2,7 +2,7 @@ import React from "react";
 
 const Feature = ({ item }) => {
   return (
-    <div>
+    <div data-aos="flip-left">
       <div className="pb-1 md:pb-2 lg:pb-3">
         <img
           className="h-10 md:h-11 lg:h-12 2xl:h-13"

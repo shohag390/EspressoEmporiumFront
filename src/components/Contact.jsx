@@ -14,7 +14,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 const Contact = () => {
   return (
     <div className="contact px-6 md:px-12 lg:px-35 2xl:px-50 py-6 md:py-8 lg:py-10 2xl:py-14 flex flex-col lg:flex-row gap-10 lg:gap-25">
-      <div className="w-full lg:w-1/2">
+      <div data-aos="fade-up" className="w-full lg:w-1/2">
         <div className="inline-block">
           <Link className="flex items-center gap-1 md:gap-2 " to={"/"}>
             <img
@@ -87,7 +87,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="w-full lg:w-1/2">
+      <div data-aos="fade-up" className="w-full lg:w-1/2">
         <h1 className="text-[24px] md:text-[28px] lg:text-[32px] 2xl:text-[36px] text-[#331A15] text-shadow-lg pb-4 md:pb-5 lg:pb-6 2xl:pb-7">
           Connect with Us
         </h1>

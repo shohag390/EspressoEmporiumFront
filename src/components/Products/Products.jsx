@@ -3,11 +3,12 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Link } from "react-router";
 import SeectionHeader from "../../shared/SeectionHeader";
 import useProduct from "../../hooks/useProduct";
+import Loading from "../../shared/Loading";
 
 const Products = () => {
   const { coffeeData } = useProduct();
 
-  const coffees = coffeeData.slice(0, 8);
+  const coffees = coffeeData?.slice(0, 8);
 
   return (
     <div className="px-6 md:px-12 lg:px-35 2xl:px-50 products py-6 md:py-8 lg:py-10 2xl:py-14">
@@ -20,7 +21,10 @@ const Products = () => {
           <Product key={coffee?._id} coffee={coffee} />
         ))}
       </div>
-      <div className="w-full flex items-center justify-center pt-7 md:pt-8 lg:pt-9 2xl:pt-10">
+      <div
+        data-aos="fade-up"
+        className="w-full flex items-center justify-center pt-7 md:pt-8 lg:pt-9 2xl:pt-10"
+      >
         <Link
           to={"/coffees"}
           className="text-[16px] md:text-[17px] lg:text-[18px] 2xl:text-[20px] px-5 md:px-6 lg:px-7 2xl:px-8 py-1 md:py-1.5 lg:py-2 border border-[#E3B577] hover:border-[#242222] text-[#242222] bg-[#E3B577] hover:bg-transparent transition-all duration-300 flex items-center gap-1 md:gap-2 group"

@@ -3,7 +3,10 @@ import { MdOutlineZoomOutMap } from "react-icons/md";
 
 const Product = ({ coffee }) => {
   return (
-    <div className="relative group w-full bg-[#eceae3bd] overflow-hidden duration-500">
+    <div
+      data-aos="fade-up"
+      className="relative group w-full bg-[#eceae3bd] overflow-hidden duration-500"
+    >
       {/* Image */}
       <div className="relative h-48 md:h-52 lg:h-56 overflow-hidden">
         <img

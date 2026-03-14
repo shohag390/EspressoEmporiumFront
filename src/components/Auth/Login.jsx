@@ -61,7 +61,10 @@ const Login = () => {
 
   return (
     <div className="h-[92vh] md:h-[91vh] lg:h-[90vh] 2xl:h-[89vh] w-full authBg flex items-center justify-center px-6 md:px-12 lg:px-35 2xl:px-50">
-      <div className="w-full md:w-[65%] lg:w-[45%] 2xl:w-[40%]  p-6 md:p-8 lg:p-10 bg-[#eceae3bd] flex flex-col gap-2 md:gap-3 lg:gap-4 2xl:gap-5">
+      <div
+        data-aos="zoom-in"
+        className="w-full md:w-[65%] lg:w-[45%] 2xl:w-[40%]  p-6 md:p-8 lg:p-10 bg-[#eceae3] flex flex-col gap-2 md:gap-3 lg:gap-4 2xl:gap-5"
+      >
         <h2 className="text-[#331A15] text-[20px] md:text-[25px] lg:text-[30px] 2xl:text-[35px] font-medium lg:font-semibold 2xl:font-bold text-shadow-lg text-center">
           Welcome Back !
         </h2>
@@ -70,14 +73,14 @@ const Login = () => {
           className="flex flex-col gap-2 md:gap-3 lg:gap-4 2xl:gap-5"
         >
           <input
-            className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
+            className="bg-[#ffffff] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
             type="email"
             name="email"
             placeholder="Enter Your Email..."
           />
           <div className="relative w-full">
             <input
-              className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
+              className="bg-[#ffffff] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
               type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Enter Your Password..."
