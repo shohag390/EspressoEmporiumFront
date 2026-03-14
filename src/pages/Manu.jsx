@@ -2,8 +2,8 @@ import { useState } from "react";
 import Product from "../components/Products/Product";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 import { FaList } from "react-icons/fa6";
-import { useEffect } from "react";
 import useProduct from "../hooks/useProduct";
+import { FiSearch } from "react-icons/fi";
 
 const Manu = () => {
   const [search, setSearch] = useState("");
@@ -12,17 +12,16 @@ const Manu = () => {
   const [maxPrice, setMaxPrice] = useState("");
   const [sortOrder, setSortOrder] = useState("");
   const [view, setView] = useState("grid");
+  const [showFilters, setShowFilters] = useState(false);
+
   const { coffeeData } = useProduct();
 
   const categories = [
     "All",
     ...new Set(coffeeData.map((item) => item.category)),
   ];
-  // console.log(categories);
 
   let filteredCoffee = coffeeData.filter((coffee) => {
-    // console.log(coffee);
-
     const matchesCategory =
       selectedCategory === "All" || coffee.category === selectedCategory;
 
@@ -37,7 +36,7 @@ const Manu = () => {
       maxPrice === "" || coffee.price <= parseInt(maxPrice);
 
     return (
-      matchesCategory && matchesSearch && matchesMinPrice && matchesMaxPrice
+      matchesCategory && matchesMinPrice && matchesMaxPrice && matchesSearch
     );
   });
 
@@ -56,27 +55,28 @@ const Manu = () => {
   };
 
   return (
-    <div className="bg-[#ffff] px-6 md:px-12 lg:px-24 py-10">
-      {/* Search */}
-      <div className="mb-8">
-        <input
-          type="text"
-          placeholder="Search coffee..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="w-full md:w-1/2 border border-[#331A15] px-4 py-3 focus:ring-2 focus:ring-[#E3B577] outline-none"
-        />
+    <div className="bg-[#ffff] w-full px-6 md:px-12 lg:px-35 2xl:px-50 py-6 md:py-8 lg:py-10 2xl:py-14">
+      {/* Search Bar */}
+      <div className="">
+        <div className="">
+          <FiSearch className="" />
+          <input
+            type="text"
+            placeholder="Search your favorite coffee..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className=""
+          />
+        </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-8">
-        {/* Sidebar */}
-        <div className="w-full lg:w-1/4">
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h2 className="text-2xl font-semibold mb-4 text-[#331A15]">
-              Categories
-            </h2>
-
-            <div className="flex flex-col gap-3">
+      <div className="">
+        {/* Sidebar (Desktop) */}
+        <div className="">
+          {/* Categories */}
+          <div className="">
+            <h2 className="">Categories</h2>
+            <div className="">
               {categories.map((category, index) => (
                 <button
                   key={index}
@@ -92,52 +92,51 @@ const Manu = () => {
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Right Content */}
-        <div className="w-full lg:w-3/4">
-          {/* Top Controls */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-8">
-            <div>
-              <h1 className="text-3xl font-bold text-[#331A15]">All Coffees</h1>
-              <p className="text-gray-600 mt-1">
-                {filteredCoffee.length} products found
-              </p>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3">
+          {/* Price & Sort */}
+          <div className="">
+            <h2 className="">Filter & Sort</h2>
+            <div className="">
               <input
                 type="number"
-                placeholder="Min"
+                placeholder="Min Price"
                 value={minPrice}
                 onChange={(e) => setMinPrice(e.target.value)}
-                className="border px-3 py-2 w-24"
+                className=""
               />
               <input
                 type="number"
-                placeholder="Max"
+                placeholder="Max Price"
                 value={maxPrice}
                 onChange={(e) => setMaxPrice(e.target.value)}
-                className="border px-3 py-2 w-24"
+                className=""
               />
-
               <select
                 value={sortOrder}
                 onChange={(e) => setSortOrder(e.target.value)}
-                className="border px-3 py-2"
+                className=""
               >
                 <option value="">Sort</option>
                 <option value="low">Low → High</option>
                 <option value="high">High → Low</option>
               </select>
-
-              <button
-                onClick={resetFilters}
-                className="bg-[#331A15] text-white px-4 py-2 hover:bg-[#E3B577] duration-300"
-              >
+              <button onClick={resetFilters} className="">
                 Reset
               </button>
+            </div>
+          </div>
+        </div>
 
+        {/* Right Content */}
+        <div className="">
+          {/* Title + Grid/List toggle */}
+          <div className="">
+            <div>
+              <h1 className="">All Coffees</h1>
+              <p className="">{filteredCoffee.length} products found</p>
+            </div>
+
+            <div className="">
               <button
                 onClick={() => setView("grid")}
                 className={`h-10 w-10 flex items-center justify-center ${
@@ -149,7 +148,7 @@ const Manu = () => {
 
               <button
                 onClick={() => setView("list")}
-                className={`h-10 w-10 flex items-center justify-center ${
+                className={`h-10 w-10 flex items-center justify-center ml-2 ${
                   view === "list" ? "bg-[#E3B577]" : "bg-[#331A15]"
                 } text-white`}
               >
@@ -176,6 +175,80 @@ const Manu = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile Filter Panel */}
+      {showFilters && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex justify-end">
+          <div className="bg-white w-3/4 max-w-xs p-6 h-full overflow-y-auto shadow-xl">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-2xl font-semibold">Filters</h2>
+              <button
+                onClick={() => setShowFilters(false)}
+                className="text-gray-800 text-lg"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Categories */}
+            <div className="mb-6">
+              <h3 className="font-semibold mb-2">Categories</h3>
+              <div className="flex flex-col gap-2">
+                {categories.map((category, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`text-left px-3 py-2 rounded-md transition ${
+                      selectedCategory === category
+                        ? "bg-[#331A15] text-white"
+                        : "bg-gray-100 hover:bg-[#E3B577]"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Price & Sort */}
+            <div className="">
+              <input
+                type="number"
+                placeholder="Min Price"
+                value={minPrice}
+                onChange={(e) => setMinPrice(e.target.value)}
+                className="border px-3 py-2 w-full"
+              />
+              <input
+                type="number"
+                placeholder="Max Price"
+                value={maxPrice}
+                onChange={(e) => setMaxPrice(e.target.value)}
+                className="border px-3 py-2 w-full"
+              />
+              <select
+                value={sortOrder}
+                onChange={(e) => setSortOrder(e.target.value)}
+                className="border px-3 py-2 w-full"
+              >
+                <option value="">Sort</option>
+                <option value="low">Low → High</option>
+                <option value="high">High → Low</option>
+              </select>
+            </div>
+
+            <button
+              onClick={() => {
+                resetFilters();
+                setShowFilters(false);
+              }}
+              className=""
+            >
+              Reset Filters
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

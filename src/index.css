@@ -33,6 +33,12 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.allCoffee {
+  background-image: url("../src/assets/images/contactBg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 .authBg {
   background-image: url("../src/assets/images/login.jpg");

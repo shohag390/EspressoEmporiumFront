@@ -4,27 +4,47 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import SocialLogin from "./SocialLogin";
 import { Link } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-
   const { createUser } = use(AuthContext);
+  const navigate = useNavigate();
 
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
-    console.log(form);
-
     const formData = new FormData(form);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const password = formData.get("password");
-    // console.log({ name, email, password });
+
+    const { email, password, ...userProfile } = Object.fromEntries(
+      formData.entries(),
+    );
+
+    const userData = {
+      ...userProfile,
+      email: email,
+    };
 
     // Create user in the firebase
     createUser(email, password)
       .then((result) => {
         console.log(result?.user);
+        // save profile info in the Database
+        fetch(`http://localhost:3000/users`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data?.insertedId) {
+              toast.success("Register Successfully");
+              navigate("/login");
+            }
+          });
       })
       .catch((error) => {
         console.log(error);
@@ -46,6 +66,18 @@ const Register = () => {
             type="text"
             name="name"
             placeholder="Enter Your Name..."
+          />
+          <input
+            className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
+            type="number"
+            name="phone"
+            placeholder="Enter Your Phone..."
+          />
+          <input
+            className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
+            type="text"
+            name="photo"
+            placeholder="Enter Your Photo Url..."
           />
           <input
             className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"

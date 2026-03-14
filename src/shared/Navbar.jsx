@@ -29,7 +29,7 @@ const navlinks = [
 
 const Navbar = () => {
   const [open, isOpen] = useState(false);
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
 
   return (
     <nav className="h-[8vh] md:h-[9vh] lg:h-[10vh] 2xl:h-[11vh] px-6 md:px-12 lg:px-35 2xl:px-50 navbar flex items-center justify-between sticky top-0 left-0 z-50">
