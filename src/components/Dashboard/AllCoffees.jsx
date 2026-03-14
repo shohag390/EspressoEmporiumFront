@@ -1,12 +1,13 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import baseURL from "../../api/baseUrl";
 
 const AllCoffees = () => {
   const [coffeeData, setCoffeeData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/coffees`)
+    fetch(`${baseURL}/coffees`)
       .then((res) => res.json())
       .then((data) => setCoffeeData(data));
   }, []);

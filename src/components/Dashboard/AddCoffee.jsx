@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../context/AuthContext";
+import baseURL from "../../api/baseUrl";
 
 const AddCoffee = () => {
   const { user } = useContext(AuthContext);
@@ -16,7 +17,7 @@ const AddCoffee = () => {
       emali,
     };
     console.log(newCoffee);
-    fetch(`http://localhost:3000/coffees`, {
+    fetch(`${baseURL}/coffees`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

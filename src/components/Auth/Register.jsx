@@ -6,6 +6,7 @@ import { Link } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
+import baseURL from "../../api/baseUrl";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -34,7 +35,7 @@ const Register = () => {
         };
 
         // save profile info in the Database
-        fetch(`http://localhost:3000/users`, {
+        fetch(`${baseURL}/users`, {
           method: "POST",
           headers: {
             "content-type": "application/json",

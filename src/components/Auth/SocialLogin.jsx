@@ -3,6 +3,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import baseURL from "../../api/baseUrl";
 
 const SocialLogin = () => {
   const { signInWithGoogle } = useContext(AuthContext);
@@ -22,7 +23,7 @@ const SocialLogin = () => {
         };
 
         // Send to MongoDB
-        fetch("http://localhost:3000/users", {
+        fetch(`${baseURL}/users`, {
           method: "POST",
           headers: {
             "content-type": "application/json",

@@ -9,6 +9,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import baseURL from "../../api/baseUrl";
 
 const Profile = () => {
   const [profile, setProfile] = useState([]);
@@ -28,7 +29,7 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:3000/users`)
+    fetch(`${baseURL}/users`)
       .then((res) => res.json())
       .then((data) => {
         setProfile(data);

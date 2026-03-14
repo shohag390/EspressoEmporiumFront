@@ -5,6 +5,7 @@ import SocialLogin from "./SocialLogin";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
 import { toast } from "react-toastify";
+import baseURL from "../../api/baseUrl";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -26,7 +27,7 @@ const Login = () => {
         };
 
         // Update last signIn to database
-        fetch(`http://localhost:3000/users`, {
+        fetch(`${baseURL}/users`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",
