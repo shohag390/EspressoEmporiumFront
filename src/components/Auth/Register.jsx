@@ -21,15 +21,18 @@ const Register = () => {
       formData.entries(),
     );
 
-    const userData = {
-      ...userProfile,
-      email: email,
-    };
-
     // Create user in the firebase
     createUser(email, password)
       .then((result) => {
         console.log(result?.user);
+
+        const userData = {
+          ...userProfile,
+          email: email,
+          creationTime: result?.user?.metadata?.creationTime,
+          lastSignInTime: result?.user?.metadata?.lastSignInTime,
+        };
+
         // save profile info in the Database
         fetch(`http://localhost:3000/users`, {
           method: "POST",

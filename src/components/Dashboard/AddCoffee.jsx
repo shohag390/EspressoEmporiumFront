@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
+import { AuthContext } from "../../context/AuthContext";
 
 const AddCoffee = () => {
+  const { user } = useContext(AuthContext);
+  const emali = user?.email;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    const newCoffee = Object.fromEntries(formData.entries());
+    const coffee = Object.fromEntries(formData.entries());
+    const newCoffee = {
+      ...coffee,
+      emali,
+    };
     console.log(newCoffee);
     fetch(`http://localhost:3000/coffees`, {
       method: "POST",

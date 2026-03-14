@@ -2,7 +2,8 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/images/logo.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const navlinks = [
   {
@@ -29,7 +30,7 @@ const navlinks = [
 
 const Navbar = () => {
   const [open, isOpen] = useState(false);
-  const [user, setUser] = useState(true);
+  const { user } = useContext(AuthContext);
 
   return (
     <nav className="h-[8vh] md:h-[9vh] lg:h-[10vh] 2xl:h-[11vh] px-6 md:px-12 lg:px-35 2xl:px-50 navbar flex items-center justify-between sticky top-0 left-0 z-50">
@@ -59,7 +60,7 @@ const Navbar = () => {
           </li>
         ))}
         <li>
-          {user ? (
+          {!user ? (
             <NavLink
               className="text-[16px] md:text-[17px] lg:text-[18px] 2xl:text-[20px] px-5 md:px-6 lg:px-7 2xl:px-8 py-.5 md:py-1.5 lg:py-2 border border-[#E3B577] hover:border-[#ffff] text-[#242222] hover:text-white bg-[#E3B577] hover:bg-transparent transition-all duration-300 flex items-center gap-1 md:gap-2 group"
               to={"/login"}
@@ -72,7 +73,7 @@ const Navbar = () => {
               className="text-[16px] md:text-[17px] lg:text-[18px] 2xl:text-[20px] px-5 md:px-6 lg:px-7 2xl:px-8 py-.5 md:py-1.5 lg:py-2 border border-[#E3B577] hover:border-[#ffff] text-[#242222] hover:text-white bg-[#E3B577] hover:bg-transparent transition-all duration-300 flex items-center gap-1 md:gap-2 group"
               to={"/dashboard"}
             >
-              <span>Profile</span>
+              <span>Dashboard</span>
               <MdKeyboardDoubleArrowRight className="group-hover:translate-x-1.5 duration-500" />
             </NavLink>
           )}
@@ -98,7 +99,7 @@ const Navbar = () => {
         ))}
 
         <li className="w-full">
-          {user ? (
+          {!user ? (
             <NavLink
               onClick={() => isOpen(!open)}
               className={({ isActive }) =>

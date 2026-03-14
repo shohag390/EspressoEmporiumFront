@@ -60,21 +60,6 @@ const UpdateProfile = () => {
           className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
         />
 
-        {/* Location */}
-        <input
-          type="text"
-          placeholder="Location"
-          defaultValue="Kaliganj, Bangladesh"
-          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
-        />
-
-        {/* Password */}
-        <input
-          type="password"
-          placeholder="Enter Your Password..."
-          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
-        />
-
         {/* Submit Button */}
         <button
           type="submit"
