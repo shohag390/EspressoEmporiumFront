@@ -6,7 +6,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 const AboutUs = () => {
   return (
     <div className="w-full px-6 md:px-12 lg:px-35 2xl:px-50 py-6 md:py-8 lg:py-10 2xl:py-14 h-full lg:h-[90vh] 2xl:h-[89vh] flex flex-col lg:flex-row items-center justify-between bg-[#ECEAE3] gap-10 md:gap-12">
-      <div data-aos="fade-right" className="w-full lg:w-1/2">
+      <div data-aos="fade-up" className="w-full lg:w-1/2">
         <h2 className="text-[#331A15] font-medium text-[20px] md:text-[22px] lg:text-[24px] 2xl:text-[26px] leading-4">
           About Us
         </h2>
@@ -41,7 +41,7 @@ const AboutUs = () => {
           </Link>
         </div>
       </div>
-      <div data-aos="fade-left" className="">
+      <div data-aos="fade-up" className="">
         <img className="" src={image} alt="" />
       </div>
     </div>
