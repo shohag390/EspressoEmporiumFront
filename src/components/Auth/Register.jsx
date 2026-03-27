@@ -25,8 +25,6 @@ const Register = () => {
     // Create user in the firebase
     createUser(email, password)
       .then((result) => {
-        console.log(result?.user);
-
         const userData = {
           ...userProfile,
           email: email,
@@ -51,7 +49,7 @@ const Register = () => {
           });
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(error);
       });
   };
 

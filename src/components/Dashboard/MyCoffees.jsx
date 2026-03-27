@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { Link } from "react-router";
 import { MdEdit } from "react-icons/md";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 import useProduct from "../../hooks/useProduct";
+import { AuthContext } from "../../context/AuthContext";
 
 const MyCoffees = () => {
   const { coffeeData, setCoffeeData, deleteCoffee } = useProduct();
+
+  const { user } = use(AuthContext);
+  const myCoffee = coffeeData?.filter(
+    (coffee) => coffee?.emali === user?.email,
+  );
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -52,7 +58,7 @@ const MyCoffees = () => {
           </thead>
 
           <tbody>
-            {coffeeData.map((coffee, index) => (
+            {myCoffee.map((coffee, index) => (
               <tr
                 key={coffee._id}
                 className={`transition duration-300 ${

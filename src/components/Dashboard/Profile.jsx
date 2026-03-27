@@ -1,20 +1,19 @@
-import React, { use, useContext, useEffect, useState } from "react";
-import {
-  FaEnvelope,
-  FaPhone,
-  FaMapMarkerAlt,
-  FaUserEdit,
-} from "react-icons/fa";
+import { useContext, useEffect, useState } from "react";
+import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthContext";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import baseURL from "../../api/baseUrl";
+import useProduct from "../../hooks/useProduct";
 
 const Profile = () => {
   const [profile, setProfile] = useState([]);
+
   const { user, logOut } = useContext(AuthContext);
-  const email = user?.email;
+  const { coffeeData } = useProduct();
+  const email = user?.email?.toLowerCase().trim();
+
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -37,7 +36,15 @@ const Profile = () => {
   }, []);
 
   const filterUser = profile?.find((item) => item.email === email);
-  console.log(filterUser);
+  const myCoffees =
+    coffeeData?.filter(
+      (coffee) => coffee?.email?.toLowerCase().trim() === email,
+    ) || [];
+
+  const myCoffeesLength = myCoffees.length;
+  console.log(myCoffeesLength);
+
+  const totalCoffees = coffeeData?.length || 0;
 
   return (
     <div className="flex flex-col items-center w-full space-y-8">
@@ -69,20 +76,20 @@ const Profile = () => {
             <span>{filterUser?.email}</span>
           </div>
           <div className="flex items-center gap-2">
-            <FaEnvelope className="text-orange-500" />
-            <span>{filterUser?.phone}</span>
+            <FaPhoneAlt className="text-orange-500" />
+            <span>{filterUser?.phone || "+880 123XXXXXX"}</span>
           </div>
         </div>
 
         {/* Stats Boxes */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-6">
           <div className="bg-orange-50 p-4 text-center">
-            <p className="text-2xl font-bold">120</p>
-            <p className="text-gray-500 text-sm mt-1">Coffees Added</p>
+            <p className="text-2xl font-bold">{totalCoffees}</p>
+            <p className="text-gray-500 text-sm mt-1">Total Coffees</p>
           </div>
           <div className="bg-green-50 p-4 text-center">
-            <p className="text-2xl font-bold">350</p>
-            <p className="text-gray-500 text-sm mt-1">Orders</p>
+            <p className="text-2xl font-bold">{myCoffeesLength}</p>
+            <p className="text-gray-500 text-sm mt-1">My Added Coffees</p>
           </div>
           <div className="bg-blue-50 p-4 text-center">
             <p className="text-2xl font-bold">$8,500</p>

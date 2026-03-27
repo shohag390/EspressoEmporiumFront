@@ -16,7 +16,6 @@ const AddCoffee = () => {
       ...coffee,
       emali,
     };
-    console.log(newCoffee);
     fetch(`${baseURL}/coffees`, {
       method: "POST",
       headers: {
