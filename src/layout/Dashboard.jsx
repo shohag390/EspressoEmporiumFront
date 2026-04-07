@@ -1,9 +1,43 @@
-import React from "react";
+import { useEffect } from "react";
 import Navbar from "../shared/Navbar";
-import { Link, Outlet } from "react-router";
+import { Link, NavLink, Outlet } from "react-router";
 import Footer from "../shared/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+const dashboardLink = [
+  {
+    id: 1,
+    path: "/dashboard",
+    display: "Dashboard",
+  },
+  {
+    id: 2,
+    path: "profile",
+    display: "My Profile",
+  },
+  {
+    id: 3,
+    path: "addCoffee",
+    display: "Add Coffee",
+  },
+  {
+    id: 4,
+    path: "myCoffee",
+    display: "My Coffees",
+  },
+  {
+    id: 5,
+    path: "allCoffee",
+    display: "All Coffee",
+  },
+];
 
 const Dashboard = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
       {/* Navbar */}
@@ -17,48 +51,18 @@ const Dashboard = () => {
             Dashboard Menu
           </h2>
 
-          <div className="flex flex-col gap-3">
-            <Link
-              to="/dashboard"
-              className="bg-gray-100 hover:bg-orange-500 hover:text-white transition px-4 py-2 rounded-lg"
-            >
-              Dashboard
-            </Link>
-
-            <Link
-              to="profile"
-              className="bg-gray-100 hover:bg-orange-500 hover:text-white transition px-4 py-2 rounded-lg"
-            >
-              My Profile
-            </Link>
-
-            <Link
-              to="updateProfile"
-              className="bg-gray-100 hover:bg-orange-500 hover:text-white transition px-4 py-2 rounded-lg"
-            >
-              Update Profile
-            </Link>
-
-            <Link
-              to="addCoffee"
-              className="bg-gray-100 hover:bg-orange-500 hover:text-white transition px-4 py-2 rounded-lg"
-            >
-              Add Coffee
-            </Link>
-
-            <Link
-              to="myCoffee"
-              className="bg-gray-100 hover:bg-orange-500 hover:text-white transition px-4 py-2 rounded-lg"
-            >
-              My Coffees
-            </Link>
-            <Link
-              to="allCoffee"
-              className="bg-gray-100 hover:bg-orange-500 hover:text-white transition px-4 py-2 rounded-lg"
-            >
-              All Coffee
-            </Link>
-          </div>
+          <ul className="flex flex-col items-center justify-center gap-3 raleway w-full">
+            {dashboardLink?.map((link) => (
+              <li className="w-full" key={link?.id}>
+                <NavLink
+                  className={`bg-gray-100 inline-block w-full hover:bg-[#e9a956] hover:text-white px-4 py-2 `}
+                  to={link?.path}
+                >
+                  {link?.display}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Content Area */}

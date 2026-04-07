@@ -47,7 +47,7 @@ const AddCoffee = () => {
           type="text"
           name="name"
           placeholder="Coffee Name"
-          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Chef */}
@@ -55,7 +55,7 @@ const AddCoffee = () => {
           type="text"
           name="chef"
           placeholder="Chef Name"
-          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Supplier */}
@@ -63,7 +63,7 @@ const AddCoffee = () => {
           type="text"
           name="supplier"
           placeholder="Supplier"
-          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Taste */}
@@ -71,7 +71,7 @@ const AddCoffee = () => {
           type="text"
           name="taste"
           placeholder="Taste"
-          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Category */}
@@ -79,7 +79,7 @@ const AddCoffee = () => {
           type="text"
           name="category"
           placeholder="Category"
-          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Details */}
@@ -87,7 +87,7 @@ const AddCoffee = () => {
           name="details"
           placeholder="Details"
           rows="3"
-          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Photo URL */}
@@ -95,7 +95,7 @@ const AddCoffee = () => {
           type="text"
           name="photo"
           placeholder="Photo URL"
-          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Price */}
@@ -103,13 +103,13 @@ const AddCoffee = () => {
           type="number"
           name="price"
           placeholder="Price"
-          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full rounded-lg text-[14px] md:text-[16px] focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Submit Button */}
         <button
           type="submit"
-          className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition mt-2"
+          className="text-[16px] md:text-[17px] lg:text-[18px] 2xl:text-[20px] py-2 px-3 lg:px-4 w-full text-[#242222] bg-[#E3B577] hover:bg-[#e9a956] transition-all duration-300 flex items-center justify-center gap-1 md:gap-2"
         >
           Add Coffee
         </button>

@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 
@@ -29,6 +30,19 @@ const AuthProvider = ({ children }) => {
   const signInUser = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
+
+  const updateUserProfile = async (name, photoURL) => {
+    const currentUser = auth.currentUser;
+    if (!currentUser) return;
+
+    await updateProfile(currentUser, {
+      displayName: name,
+      photoURL,
+    });
+
+    // update local state so UI refreshes
+    setUser({ ...currentUser });
+  };
   //  Logout
   const logOut = () => {
     return signOut(auth);
@@ -50,6 +64,7 @@ const AuthProvider = ({ children }) => {
     setUser,
     signInWithGoogle,
     logOut,
+    updateUserProfile,
   };
 
   return <AuthContext value={userInfo}>{children}</AuthContext>;

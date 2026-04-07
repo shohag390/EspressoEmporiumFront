@@ -37,18 +37,18 @@ const UpdateCoffee = () => {
 
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         {/* Photo Preview */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center gap-4">
           <img
             src={coffee?.photo}
             alt="Image"
-            className="w-28 h-28 rounded-full border-4 border-orange-500 object-cover"
+            className="w-28 h-28 rounded-full border-4 border-[#E3B577] object-cover"
           />
           <input
             type="text"
             name="photo"
             defaultValue={coffee?.photo}
             placeholder="Photo URL"
-            className="mt-2 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+            className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
           />
         </div>
 
@@ -58,7 +58,7 @@ const UpdateCoffee = () => {
           name="name"
           defaultValue={coffee?.name}
           placeholder="Coffee Name"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Chef */}
@@ -67,7 +67,7 @@ const UpdateCoffee = () => {
           name="chef"
           defaultValue={coffee?.chef}
           placeholder="Chef Name"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Supplier */}
@@ -76,7 +76,7 @@ const UpdateCoffee = () => {
           name="supplier"
           defaultValue={coffee?.supplier}
           placeholder="Supplier"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Taste */}
@@ -85,7 +85,7 @@ const UpdateCoffee = () => {
           name="taste"
           defaultValue={coffee?.taste}
           placeholder="Taste"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Category */}
@@ -94,7 +94,7 @@ const UpdateCoffee = () => {
           name="category"
           defaultValue={coffee?.category}
           placeholder="Category"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Details */}
@@ -102,7 +102,7 @@ const UpdateCoffee = () => {
           name="details"
           placeholder="Details"
           defaultValue={coffee?.details}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         {/* Price */}
@@ -111,12 +111,12 @@ const UpdateCoffee = () => {
           name="price"
           placeholder="Price"
           defaultValue={coffee?.price}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="bg-[#eceae3] py-3 px-3 lg:px-4 w-full raleway text-[14px] md:text-[16px] focus:outline-0"
         />
 
         <button
           type="submit"
-          className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-semibold transition mt-4"
+          className="text-[16px] md:text-[17px] lg:text-[18px] 2xl:text-[20px] py-2 px-3 lg:px-4 w-full text-[#242222] bg-[#E3B577] hover:bg-[#e9a956] transition-all duration-300 flex items-center justify-center gap-1 md:gap-2 group"
         >
           Update Coffee
         </button>

@@ -36,8 +36,6 @@ const Login = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log("After Update Patch", data);
-
             if (data?.modifiedCount === 1) {
               toast.success("Login Successfully");
               navigate("/");

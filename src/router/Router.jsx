@@ -12,7 +12,6 @@ import AddCoffee from "../components/Dashboard/AddCoffee";
 import DashboardHome from "../components/Dashboard/DashboardHome";
 import Profile from "../components/Dashboard/Profile";
 import MyCoffees from "../components/Dashboard/MyCoffees";
-import UpdateProfile from "../components/Dashboard/UpdateProfile";
 import UpdateCoffee from "../components/Dashboard/UpdateCoffee";
 import AllCoffees from "../components/Dashboard/AllCoffees";
 import CoffeeInfo from "../components/Products/CoffeeInfo";
@@ -75,10 +74,6 @@ export const router = createBrowserRouter([
       {
         path: "allCoffee",
         Component: AllCoffees,
-      },
-      {
-        path: "updateProfile",
-        Component: UpdateProfile,
       },
       {
         path: "updateCoffee/:id",

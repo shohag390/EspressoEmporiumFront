@@ -22,7 +22,9 @@ const DashboardHome = () => {
   return (
     <div className="space-y-8">
       {/* Title */}
-      <h1 className="text-2xl font-bold">Dashboard Overview</h1>
+      <h1 className="text-2xl md:text-3xl font-bold mb-8">
+        Dashboard Overview
+      </h1>
 
       {/* Stats Cards */}
       <div className="grid md:grid-cols-3 gap-6">

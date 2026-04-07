@@ -29,7 +29,7 @@ const navlinks = [
 ];
 
 const Navbar = () => {
-  const [open, isOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const { user } = useContext(AuthContext);
 
   return (
@@ -87,7 +87,7 @@ const Navbar = () => {
         {navlinks?.map((link) => (
           <li className="w-full" key={link?.id}>
             <NavLink
-              onClick={() => isOpen(!open)}
+              onClick={() => setOpen(!open)}
               className={({ isActive }) =>
                 `text-[16px] md:text-[17px] lg:text-[18px] 2xl:text-[20px] hover:bg-[#E3B577] hover:text-[#1B1A1A] py-2 md:py-2.5 duration-300 w-full flex items-center justify-center ${isActive ? "text-[#1B1A1A] bg-[#E3B577]" : "text-white"}`
               }
@@ -101,7 +101,7 @@ const Navbar = () => {
         <li className="w-full">
           {!user ? (
             <NavLink
-              onClick={() => isOpen(!open)}
+              onClick={() => setOpen(!open)}
               className={({ isActive }) =>
                 `text-[16px] md:text-[17px] lg:text-[18px] 2xl:text-[20px] hover:bg-[#E3B577] hover:text-[#1B1A1A] py-2 md:py-2.5 duration-300 w-full flex items-center justify-center ${isActive ? "text-[#1B1A1A] bg-[#E3B577]" : "text-white"}`
               }
@@ -111,7 +111,7 @@ const Navbar = () => {
             </NavLink>
           ) : (
             <NavLink
-              onClick={() => isOpen(!open)}
+              onClick={() => setOpen(!open)}
               className={({ isActive }) =>
                 `text-[16px] md:text-[17px] lg:text-[18px] 2xl:text-[20px] hover:bg-[#E3B577] hover:text-[#1B1A1A] py-2 md:py-2.5 duration-300 w-full flex items-center justify-center ${isActive ? "text-[#1B1A1A] bg-[#E3B577]" : "text-white"}`
               }
@@ -126,7 +126,7 @@ const Navbar = () => {
       {/* Menu Bar */}
       <button
         className="text-[#ffff] text-[25px] md:text-[30px] lg:hidden"
-        onClick={() => isOpen(!open)}
+        onClick={() => setOpen(!open)}
       >
         {!open ? <IoMenu /> : <IoClose />}
       </button>
